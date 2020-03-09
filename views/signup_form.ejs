@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <title>Sign Up Page</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <!-- Font Awesome -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/signup_form.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0 navbar_padding" href="#">BBMS</a>
+    </nav>
+
+
+    <div class="container">
+        <br>
+        <div>
+
+
+        </div>
+        <!-- <p class="text-center">Bus Booking System</p>
+        <hr>
+        <hr> -->
+        <div class="container">
+            <div class="card lg-light">
+                <article class="card-body mx-auto" style="max-width: 400px;">
+                    <br/><br/>
+                    <h4 class="card-title mt-3 text-center">Create Account</h4>
+                    <p class="text-center">Get started with your free account</p>
+                    <p>
+                        <a href="" class="btn btn-block btn-twitter"> <i class="fa fa-twitter-square"></i>   Login via Twitter</a>
+                        <a href="" class="btn btn-block btn-facebook"> <i class="fa fa-facebook-square"></i>   Login via facebook</a>
+                    </p>
+                    <p class="divider-text">
+                        <span class="bg-light">OR</span>
+                    </p>
+                    <form action="/home" method="POST">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            </div>
+                            <input name="full_name" class="form-control" placeholder="Full name" type="text">
+                        </div>
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            </div>
+                            <input class="form-control" name="signUpUsername" placeholder="User name" type="text">
+                        </div>
+                        <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                            </div>
+                            <input name="email" class="form-control" placeholder="Email address" type="email">
+                        </div>
+                        <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                            </div>
+                            <select class="custom-select" style="max-width: 120px;">
+                    <option selected="">+233</option>
+                    <option value="1">+972</option>
+                    <option value="2">+198</option>
+                    <option value="3">+701</option>
+                </select>
+                            <input name="phoneNumber" class="form-control" placeholder="Phone number" type="text">
+                        </div>
+
+                        <!-- form-group end.// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input class="form-control" name="defaultpassword" placeholder="Create password" type="password">
+                        </div>
+                        <!-- form-group// -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input class="form-control " name="userPassword" placeholder="Repeat password" type="password">
+                        </div>
+                        <!-- form-group// -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+                        </div>
+                        <!-- form-group// -->
+                        <p class="text-center">Have an account? <a href="/">Log In</a> </p>
+                    </form>
+                </article>
+            </div>
+            <!-- card.// -->
+
+        </div>
+        <!--container end.//-->
+
+    </div>
+
+    <br><br>
+    <%- include("partials/footer");-%>
+</body>
+
+</html>

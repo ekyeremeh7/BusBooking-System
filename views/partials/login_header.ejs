@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Signin Page for the Bus Booking System</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/signin.css" rel="stylesheet">
+</head>
+
+<!-- Bus Booking image -->
+
+<!-- <img class=" navbar-dark" src="svg/home-solid.svg" alt="" width="30" height="30"> -->
+
+<body class="text-center">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0 navbar_padding" href="#">BBMS</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link " href="/signup_form">
+                    <h6>Sign Up</h6>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="signin-form">
+        <form class="form-signin" action="/" method="POST">
+            <img class="mb-4 " src="assets/svg/bus2.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal color">Please sign in <img class="rotate" src="assets/svg/sign-in-alt-solid.svg" alt="" width="20" height="20"></h1>
+            <label for="inputText" class="sr-only">User name</label>
+            <input type="text" id="inputText" name="username" class="form-control" placeholder=" User name" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+            <div class="checkbox mb-3">
+                <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2020 | Emmanuel Kwabena Kyeremeh</p>
+        </form>
+    </div>
+
+</body>
+
+</html>

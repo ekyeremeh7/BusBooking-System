@@ -1,0 +1,660 @@
+var availability = [
+  {
+    "id": "1",
+    "bus": "1",
+    "route": "1",
+    "date": "2018-05-20",
+    "time": "13:00:00",
+    "amount": "1",
+    "status": "available"
+  },
+  {
+    "id": "2",
+    "bus": "1",
+    "route": "2",
+    "date": "2018-05-22",
+    "time": "20:00:00",
+    "amount": "2",
+    "status": "not available"
+  },
+  {
+    "id": "3",
+    "bus": "2",
+    "route": "1",
+    "date": "2018-06-05",
+    "time": "13:00:00",
+    "amount": "1",
+    "status": "available"
+  }
+];
+var bookings = [
+  {
+    "id": "1",
+    "id_number": "1",
+    "fullname": "1",
+    "phone": "1",
+    "bus": "2",
+    "seat": "1",
+    "date": "2",
+    "time": "2",
+    "luggage": "1",
+    "amount": "2",
+    "date_booked": null,
+    "field11": null
+  },
+  {
+    "id": "2",
+    "id_number": "1",
+    "fullname": "1",
+    "phone": "1",
+    "bus": "1",
+    "seat": "10",
+    "date": "1",
+    "time": "1",
+    "luggage": null,
+    "amount": "1",
+    "date_booked": null,
+    "field11": null
+  },
+  {
+    "id": "3",
+    "id_number": "1",
+    "fullname": "1",
+    "phone": "1",
+    "bus": "1",
+    "seat": "5",
+    "date": "1",
+    "time": "1",
+    "luggage": null,
+    "amount": "1",
+    "date_booked": null,
+    "field11": null
+  },
+  {
+    "id": "4",
+    "id_number": "1",
+    "fullname": "1",
+    "phone": "1",
+    "bus": "3",
+    "seat": "9",
+    "date": "3",
+    "time": "3",
+    "luggage": "1",
+    "amount": "3",
+    "date_booked": null,
+    "field11": null
+  },
+  {
+    "id": "5",
+    "id_number": "2",
+    "fullname": "2",
+    "phone": "2",
+    "bus": "3",
+    "seat": "1",
+    "date": "3",
+    "time": "3",
+    "luggage": null,
+    "amount": "3",
+    "date_booked": "2018-05-20",
+    "field11": null
+  },
+  {
+    "id": "6",
+    "id_number": "3",
+    "fullname": "3",
+    "phone": "3",
+    "bus": "3",
+    "seat": "5",
+    "date": "3",
+    "time": "3",
+    "luggage": null,
+    "amount": "3",
+    "date_booked": "2018-05-20",
+    "field11": null
+  },
+  {
+    "id": "7",
+    "id_number": "2",
+    "fullname": "2",
+    "phone": "2",
+    "bus": "1",
+    "seat": "10",
+    "date": "1",
+    "time": "1",
+    "luggage": null,
+    "amount": "1",
+    "date_booked": "2018-05-21",
+    "field11": null
+  }
+];
+var buses = [
+  {
+    "id": "1",
+    "number": "KBX 1234"
+  },
+  {
+    "id": "2",
+    "number": "KBZ 8283"
+  }
+];
+var customers = [
+  {
+    "id": "1",
+    "fullname": "Davin Louis",
+    "phone": "0712345678",
+    "id_number": "4410109291020"
+  },
+  {
+    "id": "2",
+    "fullname": "Kelvin Kevoh",
+    "phone": "0792323200",
+    "id_number": "33767192"
+  },
+  {
+    "id": "3",
+    "fullname": "mukangara wenyagauri",
+    "phone": "0734123453",
+    "id_number": "552211133445"
+  }
+];
+var membership_grouppermissions = [
+  {
+    "permissionID": "1",
+    "groupID": "2",
+    "tableName": "buses",
+    "allowInsert": "1",
+    "allowView": "3",
+    "allowEdit": "3",
+    "allowDelete": "3"
+  },
+  {
+    "permissionID": "2",
+    "groupID": "2",
+    "tableName": "seats",
+    "allowInsert": "1",
+    "allowView": "3",
+    "allowEdit": "3",
+    "allowDelete": "3"
+  },
+  {
+    "permissionID": "3",
+    "groupID": "2",
+    "tableName": "availability",
+    "allowInsert": "1",
+    "allowView": "3",
+    "allowEdit": "3",
+    "allowDelete": "3"
+  },
+  {
+    "permissionID": "4",
+    "groupID": "2",
+    "tableName": "bookings",
+    "allowInsert": "1",
+    "allowView": "3",
+    "allowEdit": "3",
+    "allowDelete": "3"
+  },
+  {
+    "permissionID": "5",
+    "groupID": "2",
+    "tableName": "routes",
+    "allowInsert": "1",
+    "allowView": "3",
+    "allowEdit": "3",
+    "allowDelete": "3"
+  },
+  {
+    "permissionID": "6",
+    "groupID": "2",
+    "tableName": "customers",
+    "allowInsert": "1",
+    "allowView": "3",
+    "allowEdit": "3",
+    "allowDelete": "3"
+  },
+  {
+    "permissionID": "19",
+    "groupID": "3",
+    "tableName": "buses",
+    "allowInsert": "0",
+    "allowView": "3",
+    "allowEdit": "0",
+    "allowDelete": "0"
+  },
+  {
+    "permissionID": "20",
+    "groupID": "3",
+    "tableName": "seats",
+    "allowInsert": "0",
+    "allowView": "3",
+    "allowEdit": "0",
+    "allowDelete": "0"
+  },
+  {
+    "permissionID": "21",
+    "groupID": "3",
+    "tableName": "availability",
+    "allowInsert": "0",
+    "allowView": "3",
+    "allowEdit": "0",
+    "allowDelete": "0"
+  },
+  {
+    "permissionID": "22",
+    "groupID": "3",
+    "tableName": "bookings",
+    "allowInsert": "1",
+    "allowView": "1",
+    "allowEdit": "1",
+    "allowDelete": "1"
+  },
+  {
+    "permissionID": "23",
+    "groupID": "3",
+    "tableName": "routes",
+    "allowInsert": "0",
+    "allowView": "3",
+    "allowEdit": "0",
+    "allowDelete": "0"
+  },
+  {
+    "permissionID": "24",
+    "groupID": "3",
+    "tableName": "customers",
+    "allowInsert": "1",
+    "allowView": "1",
+    "allowEdit": "1",
+    "allowDelete": "1"
+  }
+];
+var membership_groups = [
+  {
+    "groupID": "1",
+    "name": "anonymous",
+    "description": "Anonymous group created automatically on 2018-05-20",
+    "allowSignup": "0",
+    "needsApproval": "0"
+  },
+  {
+    "groupID": "2",
+    "name": "Admins",
+    "description": "Admin group created automatically on 2018-05-20",
+    "allowSignup": "0",
+    "needsApproval": "1"
+  },
+  {
+    "groupID": "3",
+    "name": "customers",
+    "description": "contains all customers",
+    "allowSignup": "1",
+    "needsApproval": "0"
+  }
+];
+var membership_userpermissions = [];
+var membership_userrecords = [
+  {
+    "recID": "1",
+    "tableName": "buses",
+    "pkValue": "1",
+    "memberID": "admin",
+    "dateAdded": "1526809520",
+    "dateUpdated": "1526809520",
+    "groupID": "2"
+  },
+  {
+    "recID": "2",
+    "tableName": "seats",
+    "pkValue": "1",
+    "memberID": "admin",
+    "dateAdded": "1526809541",
+    "dateUpdated": "1526809541",
+    "groupID": "2"
+  },
+  {
+    "recID": "3",
+    "tableName": "seats",
+    "pkValue": "2",
+    "memberID": "admin",
+    "dateAdded": "1526809550",
+    "dateUpdated": "1526809550",
+    "groupID": "2"
+  },
+  {
+    "recID": "4",
+    "tableName": "seats",
+    "pkValue": "3",
+    "memberID": "admin",
+    "dateAdded": "1526809559",
+    "dateUpdated": "1526809559",
+    "groupID": "2"
+  },
+  {
+    "recID": "5",
+    "tableName": "seats",
+    "pkValue": "4",
+    "memberID": "admin",
+    "dateAdded": "1526809568",
+    "dateUpdated": "1526809568",
+    "groupID": "2"
+  },
+  {
+    "recID": "6",
+    "tableName": "seats",
+    "pkValue": "5",
+    "memberID": "admin",
+    "dateAdded": "1526809577",
+    "dateUpdated": "1526809577",
+    "groupID": "2"
+  },
+  {
+    "recID": "7",
+    "tableName": "seats",
+    "pkValue": "6",
+    "memberID": "admin",
+    "dateAdded": "1526809587",
+    "dateUpdated": "1526809587",
+    "groupID": "2"
+  },
+  {
+    "recID": "8",
+    "tableName": "seats",
+    "pkValue": "7",
+    "memberID": "admin",
+    "dateAdded": "1526809597",
+    "dateUpdated": "1526809597",
+    "groupID": "2"
+  },
+  {
+    "recID": "9",
+    "tableName": "seats",
+    "pkValue": "8",
+    "memberID": "admin",
+    "dateAdded": "1526809605",
+    "dateUpdated": "1526809605",
+    "groupID": "2"
+  },
+  {
+    "recID": "10",
+    "tableName": "seats",
+    "pkValue": "9",
+    "memberID": "admin",
+    "dateAdded": "1526809615",
+    "dateUpdated": "1526809615",
+    "groupID": "2"
+  },
+  {
+    "recID": "11",
+    "tableName": "seats",
+    "pkValue": "10",
+    "memberID": "admin",
+    "dateAdded": "1526809623",
+    "dateUpdated": "1526809623",
+    "groupID": "2"
+  },
+  {
+    "recID": "12",
+    "tableName": "routes",
+    "pkValue": "1",
+    "memberID": "admin",
+    "dateAdded": "1526809669",
+    "dateUpdated": "1526809669",
+    "groupID": "2"
+  },
+  {
+    "recID": "13",
+    "tableName": "routes",
+    "pkValue": "2",
+    "memberID": "admin",
+    "dateAdded": "1526809686",
+    "dateUpdated": "1526809686",
+    "groupID": "2"
+  },
+  {
+    "recID": "14",
+    "tableName": "availability",
+    "pkValue": "1",
+    "memberID": "admin",
+    "dateAdded": "1526809809",
+    "dateUpdated": "1526810984",
+    "groupID": "2"
+  },
+  {
+    "recID": "15",
+    "tableName": "availability",
+    "pkValue": "2",
+    "memberID": "admin",
+    "dateAdded": "1526809852",
+    "dateUpdated": "1526810962",
+    "groupID": "2"
+  },
+  {
+    "recID": "16",
+    "tableName": "customers",
+    "pkValue": "1",
+    "memberID": "admin",
+    "dateAdded": "1526810032",
+    "dateUpdated": "1526810032",
+    "groupID": "2"
+  },
+  {
+    "recID": "17",
+    "tableName": "bookings",
+    "pkValue": "1",
+    "memberID": "admin",
+    "dateAdded": "1526810611",
+    "dateUpdated": "1526810611",
+    "groupID": "2"
+  },
+  {
+    "recID": "18",
+    "tableName": "bookings",
+    "pkValue": "2",
+    "memberID": "admin",
+    "dateAdded": "1526812595",
+    "dateUpdated": "1526812595",
+    "groupID": "2"
+  },
+  {
+    "recID": "19",
+    "tableName": "bookings",
+    "pkValue": "3",
+    "memberID": "admin",
+    "dateAdded": "1526812704",
+    "dateUpdated": "1526812704",
+    "groupID": "2"
+  },
+  {
+    "recID": "20",
+    "tableName": "buses",
+    "pkValue": "2",
+    "memberID": "admin",
+    "dateAdded": "1526820828",
+    "dateUpdated": "1526820828",
+    "groupID": "2"
+  },
+  {
+    "recID": "21",
+    "tableName": "availability",
+    "pkValue": "3",
+    "memberID": "admin",
+    "dateAdded": "1526820876",
+    "dateUpdated": "1526820876",
+    "groupID": "2"
+  },
+  {
+    "recID": "22",
+    "tableName": "bookings",
+    "pkValue": "4",
+    "memberID": "admin",
+    "dateAdded": "1526820948",
+    "dateUpdated": "1526820948",
+    "groupID": "2"
+  },
+  {
+    "recID": "23",
+    "tableName": "customers",
+    "pkValue": "2",
+    "memberID": "kevoh",
+    "dateAdded": "1526822459",
+    "dateUpdated": "1526822459",
+    "groupID": "3"
+  },
+  {
+    "recID": "24",
+    "tableName": "bookings",
+    "pkValue": "5",
+    "memberID": "kevoh",
+    "dateAdded": "1526824428",
+    "dateUpdated": "1526824428",
+    "groupID": "3"
+  },
+  {
+    "recID": "25",
+    "tableName": "customers",
+    "pkValue": "3",
+    "memberID": "admin",
+    "dateAdded": "1526845211",
+    "dateUpdated": "1526845211",
+    "groupID": "2"
+  },
+  {
+    "recID": "26",
+    "tableName": "bookings",
+    "pkValue": "6",
+    "memberID": "admin",
+    "dateAdded": "1526845238",
+    "dateUpdated": "1526845238",
+    "groupID": "2"
+  },
+  {
+    "recID": "27",
+    "tableName": "bookings",
+    "pkValue": "7",
+    "memberID": "admin",
+    "dateAdded": "1526885955",
+    "dateUpdated": "1526885955",
+    "groupID": "2"
+  }
+];
+var membership_users = [
+  {
+    "memberID": "admin",
+    "passMD5": "21232f297a57a5a743894a0e4a801fc3",
+    "email": "admin@admin.com",
+    "signupDate": "2018-05-20",
+    "groupID": "2",
+    "isBanned": "0",
+    "isApproved": "1",
+    "custom1": null,
+    "custom2": null,
+    "custom3": null,
+    "custom4": null,
+    "comments": "Admin member created automatically on 2018-05-20\\nRecord updated automatically on 2018-05-20",
+    "pass_reset_key": null,
+    "pass_reset_expiry": null
+  },
+  {
+    "memberID": "guest",
+    "passMD5": null,
+    "email": null,
+    "signupDate": "2018-05-20",
+    "groupID": "1",
+    "isBanned": "0",
+    "isApproved": "1",
+    "custom1": null,
+    "custom2": null,
+    "custom3": null,
+    "custom4": null,
+    "comments": "Anonymous member created automatically on 2018-05-20",
+    "pass_reset_key": null,
+    "pass_reset_expiry": null
+  },
+  {
+    "memberID": "kaddy",
+    "passMD5": "827ccb0eea8a706c4c34a16891f84e7b",
+    "email": "kaddy@gmail.com",
+    "signupDate": "2018-05-21",
+    "groupID": "3",
+    "isBanned": "0",
+    "isApproved": "1",
+    "custom1": "",
+    "custom2": "",
+    "custom3": "",
+    "custom4": "",
+    "comments": "member signed up through the registration form.",
+    "pass_reset_key": null,
+    "pass_reset_expiry": null
+  },
+  {
+    "memberID": "kevoh",
+    "passMD5": "827ccb0eea8a706c4c34a16891f84e7b",
+    "email": "kevo@gmail.com",
+    "signupDate": "2018-05-20",
+    "groupID": "3",
+    "isBanned": "0",
+    "isApproved": "1",
+    "custom1": "",
+    "custom2": "",
+    "custom3": "",
+    "custom4": "",
+    "comments": "member signed up through the registration form.",
+    "pass_reset_key": null,
+    "pass_reset_expiry": null
+  }
+];
+var routes = [
+  {
+    "id": "1",
+    "name": "Chavakali-Nairobi",
+    "time": "day",
+    "amount": "1000"
+  },
+  {
+    "id": "2",
+    "name": "Chavakali-Nairobi",
+    "time": "night",
+    "amount": "500"
+  }
+];
+var seats = [
+  {
+    "id": "1",
+    "name": "A1"
+  },
+  {
+    "id": "2",
+    "name": "A2"
+  },
+  {
+    "id": "3",
+    "name": "A3"
+  },
+  {
+    "id": "4",
+    "name": "A4"
+  },
+  {
+    "id": "5",
+    "name": "A5"
+  },
+  {
+    "id": "6",
+    "name": "A6"
+  },
+  {
+    "id": "7",
+    "name": "A7"
+  },
+  {
+    "id": "8",
+    "name": "A8"
+  },
+  {
+    "id": "9",
+    "name": "A9"
+  },
+  {
+    "id": "10",
+    "name": "A10"
+  }
+];

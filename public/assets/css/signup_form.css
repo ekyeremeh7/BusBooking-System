@@ -1,0 +1,83 @@
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+}
+
+.btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+
+/* .card {
+    margin-top: 50px;
+} */
+
+.navbar_padding {
+    margin-left: 10px;
+    font-weight: 90;
+}
+
+
+/*
+ * Navbar
+ */
+
+
+/* 
+.navbar {
+    min-height: 80px;
+}
+
+.navbar-brand {
+    padding: 0 15px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.navbar-toggle {
+    (80px - button height 34px) / 2 = 23px
+
+margin-top: 23px;
+padding: 9px 10px !important;
+
+}
+*/
+
+@media (min-width: 768px) {
+    .navbar-nav>li>a {
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-top: 22.5px;
+        padding-bottom: 22.5px;
+        line-height: 27px;
+    }
+}
